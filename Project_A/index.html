@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body id="body_index">
+    <div class="login-container">
+    <form id="loginForm">
+        <h2>Login</h2>
+        <p><em>or use your email password</em></p>
+        <input type="email" id="username" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <div id="errorSection" class="hidden">
+        <div class="extra-options">
+            <button id="generatePasswordBtn" type="button" onclick="generatePassword()">Recommended Password</button>
+            <button id="generatePasswordBtn" type="button" onclick="window.location.href='create_password.html'">Check Strength Of Password</button>
+        </div>
+        <button id="signInBtn" type="submit">Login</button>
+    </div>
+    </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="main.js" defer></script>
+    <script src="type.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">PROJECT</a>
+        <nav class="navbar">
+            <a href="rough.html" class="nav-btn">Home</a>
+            <a href="about.html" class="nav-btn">About the Project</a>
+            <a href="team.html" class="nav-btn">Team-mates</a>
+            <a href="index.html" class="nav-btn">Sign-Up</a>
+        </nav>
+    </header>
+    <section class="frontend">
+        <div class="side-image_2nd">
+                <img src="https://static.vecteezy.com/system/resources/previews/053/392/138/large_2x/abstract-geometric-pattern-artwork-retro-colors-liquid-silhouette-drop-in-modern-style-free-vector.jpg" width="540px" height="540px" style="border-radius:24px; object-fit:cover;" />
+        </div>
+        <div class="frontend-content">
+            <h2> Frontend: <span class="text"></span></h2>
+            <p>The interface is crafted using HTML for structure and CSS for styling, creating a responsive and visually appealing user experience. Key elements include:</p>
+            <ul class="frontend-list">
+                <li><span class="list"> A clean homepage with content encouraging user interaction.</span></li>
+                <li> A navigation bar for easy access to different sections of the project.</li>
+                <li><span class="list">A clearly structured login form on a separate page with input fields for email and password.</span></li>
+                <li> Buttons for actions like “Login”, “Generate Password”, and “Create Manually”.</li>
+                <li><span class="list">A responsive design that adapts to different screen sizes and orientations.</span></li>
+            </ul>
+        </div>
+    </section>
+    <section class="functionality">
+        <div class="functionality-content">
+            <h2>Functionality & JavaScript Logic</h2>
+            <p class="para_1">JavaScript plays a central role in powering the dynamic aspects of the project. The key functionalities handled by JavaScript include:</p>
+            <p class="para_2">🔐 Login Validation</p>
+            <ul class="functionality-list">
+                <li>When a user enters their email and password, JavaScript sends the data to the backend (or simulated backend using a JSON file) to validate credentials.</li>
+                <li>If the login is successful, the user is redirected back to the main page.</li>
+                <li>If the credentials are incorrect, the user is presented with <strong>two choices:</strong></li>
+                <ul class="functionality-list_2nd">
+                    <li><strong>Generate Password</strong></li>
+                    <li><strong>Create Password Manually</strong></li>
+                </ul>
+            </ul>
+            <p class="para_2">🔑 Password Generator</p>
+            <p class="para_3">The auto-password generator creates a secure password using:</p>
+            <ul class="functionality-list">
+                <li>Uppercase and lowercase letters</li>
+                <li>Numbers</li>
+                <li>Special characters (e.g., !@#$%^&*).</li>
+                <li>Random lengths between 10 to 16 characters.</li>
+            </ul>
+            <p class="para_3">This helps users avoid using weak, common, or predictable passwords.</p>
+            <p class="para_2">📈 Password Strength Checker</p>
+            <p class="para_3">As users type or paste a password, a real-time password strength checker evaluates the following:</p>
+            <ul class="functionality-list">
+                <li>Password length</li>
+                <li>Variety of characters used (uppercase, lowercase, numbers, symbols)</li>
+                <li>Presence of repeated or common patterns</li>
+            </ul>
+            <p class="para_3">Strength is displayed visually as <strong>Weak</strong>, <strong>Moderate</strong>, or <strong>Strong</strong> helping users understand how to improve their passwords.</p>
+        </div>
+    </section>
+
+    <section class="backend">
+        <div class="backend-content">
+            <h2>🗃️ Backend and Database</h2>
+            <p class="para_4">The backend of the application is powered by Python Flask, which serves as the core for:</p>
+            <p class="para_5"><strong>📡 Server-Side Communication</strong></p>
+            <ul class="backend-list">
+                <li>Flask handles HTTP requests from the frontend using routes like <strong>/login</strong>, <strong>/generate</strong>, and <strong>/validate-password</strong>.</li>
+                <li>On receiving login credentials, Flask reads the <strong>users.json</strong> file to verify user data.</li>
+            </ul>
+            <p class="para_5">🧾 users.json as a Flat-File Database</p>
+            <ul class="backend-list">
+                <li>This file stores a list of registered users and their passwords (ideally hashed for security).</li>
+                <li>Example structure:</li>
+                <p>
+                <code>
+                    [
+                        {
+                            "email": "user@example.com",
+                            "password": "Password123!"
+                        },
+                        ...
+                    ]
+                </code>
+            </p>
+            </ul>
+        </div>
+        <div class="side-image_3rd">
+                <img src="https://newline.tech/wp-content/uploads/2023/07/Profession_-Backend-Developer.png" width="700px" height="100%"/>
+        </div>
+    </section>
+
+    <section class="security">
+            <div class="side-image_4th">
+                <img src="cyber_security.jpg" width="750px" height="100%"/>
+            </div>
+            <div class="security-content">
+            <p>🔐 Secure Authentication Flow</p>
+            <ul class="security-list">
+                <li>When a user submits login details:</li>
+                <ul class="security-list_2nd">
+                    <li>Flask loads users.json</li>
+                    <li>Compares submitted credentials with stored entries</li>
+                </ul>
+                <li>If login is successful, the server sends a response to redirect the user back to the main page.</li>
+                <li>If login fails, the user is redirected to a page offering:</li>
+                <ul class="security-list_2nd">
+                    <li>Generate a secure password</li>
+                    <li>Manually create a password (checked using the strength checker)</li>
+                </ul>
+            </ul>
+            <p>🧪 Password Handling (Optional Security Enhancements)</p>
+            <ul class="security-list">
+                <li>While users.json is used for simplicity, the backend could:</li>
+                <ul class="security-list_2nd">
+                    <li>Hash passwords before storage (using hashlib or bcrypt)</li>
+                    <li>Validate password rules server-side as well</li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
